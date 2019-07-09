@@ -19,14 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instagram-logo.png"]];
+
 }
 
 
 /*
  Action: didTapLogout
  Goal: User logs out of the app. After logout,
- user is taken to login screen. 
+ user is taken to login screen.
  */
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
