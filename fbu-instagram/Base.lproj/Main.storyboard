@@ -36,7 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evo-cr-s5x">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evo-cr-s5x">
                                 <rect key="frame" x="89" y="391" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,8 +44,8 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapLogin:" destination="PXu-b3-7W4" eventType="touchUpInside" id="EAO-QV-QJ8"/>
-                                    <action selector="onLoginTap:" destination="PXu-b3-7W4" eventType="touchUpInside" id="0D3-6x-ypm"/>
+                                    <action selector="onLoginTap:" destination="PXu-b3-7W4" eventType="touchUpInside" id="K7h-zh-Guo"/>
+                                    <segue destination="wXe-6v-Gm6" kind="presentation" id="APt-Kf-BFY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9b-jO-bGf">
@@ -78,7 +78,6 @@
                         <outlet property="loginIndicator" destination="Rjc-zQ-09q" id="CbL-vU-Sk3"/>
                         <outlet property="passwordField" destination="11j-mA-Y4o" id="bvw-dS-vCi"/>
                         <outlet property="usernameField" destination="Bai-Ao-un5" id="tZa-Wk-fk8"/>
-                        <segue destination="wVi-if-9hj" kind="presentation" identifier="loginSegue" id="hFs-Ut-fX7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7s5-sX-qL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -99,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcR-QV-5bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="37"/>
+            <point key="canvasLocation" x="218" y="-242"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tmO-8Y-5Up">
@@ -126,11 +125,8 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameField:" destination="uYi-Y6-eq2" eventType="editingDidBegin" id="4eH-8y-NEz"/>
-                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RF-kZ-B1W">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RF-kZ-B1W">
                                 <rect key="frame" x="89" y="391" width="198" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1137254902" green="0.63137254899999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -138,8 +134,7 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressNext:" destination="uYi-Y6-eq2" eventType="touchUpInside" id="ekp-Kh-NVO"/>
-                                    <action selector="didTapLogin:" destination="PXu-b3-7W4" eventType="touchUpInside" id="ChE-T6-211"/>
+                                    <action selector="didTapNext:" destination="uYi-Y6-eq2" eventType="touchUpInside" id="cvO-52-JLZ"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="18e-vy-4F7">
@@ -158,9 +153,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="usernameField:" destination="uYi-Y6-eq2" eventType="editingDidBegin" id="Z6Z-Tx-BK9"/>
-                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0hD-3O-bzK">
                                 <rect key="frame" x="89" y="429" width="198" height="78"/>
@@ -180,34 +172,15 @@
                         <outlet property="nextButton" destination="6RF-kZ-B1W" id="IPt-hi-laR"/>
                         <outlet property="passwordField" destination="OaV-Rg-BqS" id="lYi-gC-BpT"/>
                         <outlet property="usernameField" destination="sSv-Zy-k7V" id="WUx-NA-kzK"/>
-                        <segue destination="wVi-if-9hj" kind="presentation" id="cb1-6x-01f"/>
+                        <segue destination="PXu-b3-7W4" kind="presentation" identifier="loginSegue" id="hsA-ff-ppj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ7-ZO-u8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.59999999999999" y="-693.10344827586209"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RTs-d6-HWb">
-            <objects>
-                <navigationController id="wVi-if-9hj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7t6-X9-TwX">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="wXe-6v-Gm6" kind="relationship" relationship="rootViewController" id="ycX-fa-sSZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dWz-Ih-nkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="102" y="38"/>
+            <point key="canvasLocation" x="-327" y="-1043"/>
         </scene>
     </scenes>
     <resources>
         <image name="instagram-logo" width="6588" height="2262"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cb1-6x-01f"/>
-    </inferredMetricsTieBreakers>
 </document>

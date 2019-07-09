@@ -28,11 +28,15 @@
 }
 
 - (IBAction)onLoginTap:(UIButton *)sender {
-  //  sender.isEnabled = TRUE;
-    [self loginUser];
+   [self loginUser];
+    
+    NSLog(@"I tapped login");
+
 }
 
 - (void)loginUser {
+    NSLog(@"I am checking data");
+  //  loginIndicator.startAnimating;
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {

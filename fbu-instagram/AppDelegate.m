@@ -22,28 +22,26 @@
     
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = @"instagram-fbu";
+        configuration.applicationId = @"instagramFbu";
         configuration.server = @"http://instagram-fbu.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
     
+//
+//    if (PFUser.currentUser) {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home View Controller" bundle:nil];
+//
+//        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+//    }
     
-    //A PFObject is basically a dictionary that can be saved to Parse
-    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
-    gameScore[@"score"] = @1337;
-    gameScore[@"playerName"] = @"Sean Plott";
-    gameScore[@"cheatMode"] = @NO;
-    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Object saved!");
-        } else {
-            NSLog(@"Error: %@", error.description);
-        }
-    }];
-    
+  
     return YES;
 }
+
+
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
