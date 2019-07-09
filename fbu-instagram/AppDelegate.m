@@ -28,13 +28,14 @@
     
     [Parse initializeWithConfiguration:config];
     
-//
-//    if (PFUser.currentUser) {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home View Controller" bundle:nil];
-//
-//        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-//    }
+
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
+    }
     
+
   
     return YES;
 }
