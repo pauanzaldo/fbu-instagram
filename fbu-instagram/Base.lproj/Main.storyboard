@@ -234,7 +234,7 @@
         <!--Capture-->
         <scene sceneID="Aog-VA-aBi">
             <objects>
-                <viewController id="OQL-4q-JtN" sceneMemberID="viewController">
+                <viewController id="OQL-4q-JtN" customClass="CaptureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5Q-ez-JdF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

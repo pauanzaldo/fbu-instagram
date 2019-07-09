@@ -27,9 +27,10 @@
 /*
  Action: didTapLogout
  Goal: User logs out of the app. After logout,
- user is taken to login screen.
+ user is taken to login screen. Clears the current user.
  */
 - (IBAction)didTapLogout:(id)sender {
+    
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];

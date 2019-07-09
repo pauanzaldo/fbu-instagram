@@ -16,8 +16,13 @@
 
 @implementation AppDelegate
 
-//Initialize Parse in  AppDelegate to point to my own server:
 
+/*
+ Method: didFinishLaunghingWithOptions
+ Goals:
+ 1. Initialize parse in AppDelegate to point to my own server
+ 2. Check if there is a current user in Parse cache or not. If there is a cached user already present, directly load the Home view Controller (without asking the user to login again).
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
     
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
@@ -27,22 +32,16 @@
     }];
     
     [Parse initializeWithConfiguration:config];
-    
 
-    if (PFUser.currentUser) {
+    //Once user successfully logs in, Parse caches the logged in user for convenient access
+    if (PFUser.currentUser) { // Gets the current user
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarStoryboard"];
     }
-    
-
   
     return YES;
 }
-
-
-
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
