@@ -7,9 +7,13 @@
 //
 
 #import "CaptureViewController.h"
+
 #import <UIKit/UIKit.h>
-@interface CaptureViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITabBarControllerDelegate>
+@interface CaptureViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITabBarControllerDelegate, UITextViewDelegate>
 @property (strong, nonatomic) UIImage *chosenImage;
+@property (weak, nonatomic) IBOutlet UIImageView *chosenImageView;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
+
 
 @end
 
@@ -18,10 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBarController.delegate = self;
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+    
+    self.captionTextView.delegate = self;
+    
+    
     // Instantiate a UIImagePickerController
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -37,23 +41,33 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    [self presentViewController:imagePickerVC animated:YES completion:^{
+        //Placeholder text
+        self.captionTextView.text = @"Insert caption here";
+        self.captionTextView.textColor = [UIColor lightGrayColor];
+    }];
     
+    
+   
+   
 }
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
 
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+  //  UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the image
-    self.chosenImage = editedImage;
+    self.chosenImageView.image = editedImage;
+    self.chosenImage = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
     // manually segue to Caption Controller Controller
-    [self performSegueWithIdentifier:@"CaptionSegue" sender:nil];
+    
+  //tlcfihhlufrfdjdcbhhkbvbnejjvghkn  [self performSegueWithIdentifier:@"CaptionSegue" sender:nil];
 
 }
 
@@ -72,6 +86,48 @@
 
     return newImage;
 }
+
+
+//Placeholder in UITextView method #1
+- (void)textViewDidBeginEditing:(UITextView *)captionTextView
+{
+    if ([self.captionTextView.text isEqualToString:@"Insert caption here"]) {
+        self.captionTextView.text  = @"";
+        self.captionTextView.textColor = [UIColor blackColor];
+    }
+    [self.captionTextView becomeFirstResponder];
+}
+
+//Placeholder in UITextView method #2
+- (void)textViewDidEndEditing:(UITextView *)captionTextView
+{
+    if ([self.captionTextView.text isEqualToString:@""]) {
+        self.captionTextView.text = @"Insert caption here";
+        self.captionTextView.textColor = [UIColor lightGrayColor];
+    }
+    [self.captionTextView resignFirstResponder];
+}
+
+
+
+
+
+// #pragma mark - Navigation
+//
+// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//     if([segue.identifier isEqualToString:@"CaptionSegue"]){
+//         CaptionViewController *captionViewController = [segue destinationViewController];
+//         captionViewController.image = self.chosenImage;
+//
+//
+//       //  profileController.user = sender;
+//
+//         //send chosen image to Capture View Controller
+//     }
+// }
+
+
+
 
 
 @end
