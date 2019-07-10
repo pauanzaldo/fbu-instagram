@@ -242,10 +242,47 @@
                         <viewLayoutGuide key="safeArea" id="6To-Am-an8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" image="insta_camera_btn" id="DBS-Ml-jWH"/>
+                    <connections>
+                        <segue destination="dhG-6m-N8R" kind="presentation" identifier="CaptionSegue" id="Svn-6z-tCv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLz-kv-hif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922" y="535"/>
+            <point key="canvasLocation" x="614" y="493"/>
+        </scene>
+        <!--Caption View Controller-->
+        <scene sceneID="hmj-Ag-Xrm">
+            <objects>
+                <viewController id="wFz-mn-B1t" customClass="CaptionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fIQ-Cc-93A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNl-CL-c98">
+                                <rect key="frame" x="0.0" y="56" width="375" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Insert caption here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QPI-NJ-am1">
+                                <rect key="frame" x="0.0" y="351" width="375" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lb0-DP-c3Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bgo-qi-vOD">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="i7N-P1-z15"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="QPI-NJ-am1" id="UKn-6c-9op"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUb-LV-bQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541.5999999999999" y="1259.8200899550227"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Ke3-OE-wX3">
@@ -262,6 +299,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6L4-zm-HqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="785" y="1324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Juy-sT-LM9">
+            <objects>
+                <navigationController id="dhG-6m-N8R" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tdC-VD-Thc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wFz-mn-B1t" kind="relationship" relationship="rootViewController" id="ihx-Qd-RAo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJj-UP-OZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="518"/>
         </scene>
     </scenes>
     <resources>

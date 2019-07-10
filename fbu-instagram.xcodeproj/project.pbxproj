@@ -19,6 +19,7 @@
 		11F221E522D4132700F17E95 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221E422D4132700F17E95 /* HomeViewController.m */; };
 		11F221E822D4187300F17E95 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221E722D4187300F17E95 /* RegisterViewController.m */; };
 		11F221EB22D55E5800F17E95 /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221EA22D55E5800F17E95 /* CaptureViewController.m */; };
+		11F221EE22D61E0D00F17E95 /* CaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221ED22D61E0D00F17E95 /* CaptionViewController.m */; };
 		15581358B3DDD5243C97A970 /* Pods_fbu_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B95507FE70C3A71F34AB365 /* Pods_fbu_instagram.framework */; };
 		5FCC504F1B4FDA9C980D1F0E /* Pods_fbu_instagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6F3C7B502AF39E3CE629F7 /* Pods_fbu_instagramTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		11F221E722D4187300F17E95 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		11F221E922D55E5800F17E95 /* CaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
 		11F221EA22D55E5800F17E95 /* CaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
+		11F221EC22D61E0D00F17E95 /* CaptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptionViewController.h; sourceTree = "<group>"; };
+		11F221ED22D61E0D00F17E95 /* CaptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptionViewController.m; sourceTree = "<group>"; };
 		1E6F3C7B502AF39E3CE629F7 /* Pods_fbu_instagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbu_instagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D97A11F10A8CF193E6B5F20 /* Pods-fbu-instagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instagramUITests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instagramUITests/Pods-fbu-instagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B95507FE70C3A71F34AB365 /* Pods_fbu_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbu_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +165,8 @@
 			children = (
 				11F221E922D55E5800F17E95 /* CaptureViewController.h */,
 				11F221EA22D55E5800F17E95 /* CaptureViewController.m */,
+				11F221EC22D61E0D00F17E95 /* CaptionViewController.h */,
+				11F221ED22D61E0D00F17E95 /* CaptionViewController.m */,
 				11F221E622D4187300F17E95 /* RegisterViewController.h */,
 				11F221E722D4187300F17E95 /* RegisterViewController.m */,
 				11F221E322D4132700F17E95 /* HomeViewController.h */,
@@ -421,6 +426,7 @@
 				11F221AE22D3FB2E00F17E95 /* AppDelegate.m in Sources */,
 				11F221E522D4132700F17E95 /* HomeViewController.m in Sources */,
 				11F221EB22D55E5800F17E95 /* CaptureViewController.m in Sources */,
+				11F221EE22D61E0D00F17E95 /* CaptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
