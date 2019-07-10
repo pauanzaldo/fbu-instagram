@@ -7,7 +7,7 @@
 //
 
 #import "CaptureViewController.h"
-
+#import "HomeViewController.h"
 #import <UIKit/UIKit.h>
 
 #import "Post.h"
@@ -49,10 +49,6 @@
         self.captionTextView.text = @"Insert caption here";
         self.captionTextView.textColor = [UIColor lightGrayColor];
     }];
-    
-    
-   
-   
 }
 
 
@@ -113,6 +109,15 @@
 
 - (IBAction)didShare:(UIBarButtonItem *)sender {
     [Post postUserImage:self.chosenImageView.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        if(succeeded){
+            NSLog(@"Posted!");
+            //ParentViewController is tab bar controller
+            [self.parentViewController.tabBarController setSelectedIndex:0];
+        } else{
+             NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
+            
+        }
     
     }];
 }
