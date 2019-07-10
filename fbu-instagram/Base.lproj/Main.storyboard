@@ -92,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is my caption" textAlignment="natural" id="Foq-J2-10p">
+                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="Foq-J2-10p">
                             <rect key="frame" x="0.0" y="292" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,7 +100,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="264" id="AFD-cU-q8P">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="264" id="AFD-cU-q8P" customClass="dbccrrtnnvjvuvhvteufckldljnieetl">
                                 <rect key="frame" x="0.0" y="28" width="375" height="264"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AFD-cU-q8P" id="dga-k5-Big">
@@ -276,7 +276,11 @@
                                 <segue destination="aef-86-RUz" kind="show" id="xdz-QS-ucy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="BpC-8O-tFU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="BpC-8O-tFU">
+                            <connections>
+                                <action selector="didShare:" destination="OQL-4q-JtN" id="5x9-hg-ud6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextView" destination="QPI-NJ-am1" id="wKF-FD-pAB"/>

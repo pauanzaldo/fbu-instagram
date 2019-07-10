@@ -9,6 +9,9 @@
 #import "CaptureViewController.h"
 
 #import <UIKit/UIKit.h>
+
+#import "Post.h"
+
 @interface CaptureViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITabBarControllerDelegate, UITextViewDelegate>
 @property (strong, nonatomic) UIImage *chosenImage;
 @property (weak, nonatomic) IBOutlet UIImageView *chosenImageView;
@@ -108,6 +111,11 @@
     [self.captionTextView resignFirstResponder];
 }
 
+- (IBAction)didShare:(UIBarButtonItem *)sender {
+    [Post postUserImage:self.chosenImageView.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    
+    }];
+}
 
 
 
