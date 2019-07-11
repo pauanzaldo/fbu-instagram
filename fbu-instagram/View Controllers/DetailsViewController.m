@@ -9,6 +9,8 @@
 #import <Parse/Parse.h>
 #import "PostCell.h"
 #import "Post.h"
+#import "NSDate+DateTools.h"
+
 
 @interface DetailsViewController ()
 
@@ -18,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *detailsImageProfile;
 @property (weak, nonatomic) IBOutlet UITextView *detailsPostCaption;
 @property (weak, nonatomic) IBOutlet UILabel *detailsPostUsername;
+@property (weak, nonatomic) IBOutlet UILabel *detailsTimeStamp;
 
 @end
 
@@ -25,8 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     
     self.detailsPostCaption.text = self.post[@"caption"];
     NSData *data = self.post.image.getData;
@@ -41,6 +42,12 @@
     self.detailsImageView.image = image;
     self.detailsPostUsername.text = self.post.author.username;
     
+    //Relative date
+    NSDate *timeAgoDate = [NSDate dateWithTimeInterval:0 sinceDate:self.post.createdAt];
+    
+    //Displays relative date
+    self.detailsTimeStamp.text =timeAgoDate.shortTimeAgoSinceNow;
+   
 }
 
 @end

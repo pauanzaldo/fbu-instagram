@@ -96,7 +96,7 @@
         <scene sceneID="7hV-Az-Prk">
             <objects>
                 <viewController id="wXe-6v-Gm6" customClass="HomeViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="310" sectionHeaderHeight="28" sectionFooterHeight="28" id="RWx-hE-XOE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="310" sectionHeaderHeight="28" sectionFooterHeight="28" id="RWx-hE-XOE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AFD-cU-q8P" id="dga-k5-Big">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="309.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecn-Mm-59U" customClass="PFImageView">
@@ -120,7 +120,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Znb-TW-Ju6">
-                                            <rect key="frame" x="16" y="6" width="35" height="35"/>
+                                            <rect key="frame" x="7" y="6" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNx-4U-y49">
@@ -131,7 +131,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-oj-4cn">
-                                            <rect key="frame" x="61" y="7" width="263" height="34"/>
+                                            <rect key="frame" x="52" y="7" width="263" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="FreightSansProBold-Regular" family="FreightSans Pro" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -144,6 +144,7 @@
                                     <outlet property="postImage" destination="ecn-Mm-59U" id="p4B-p8-oNh"/>
                                     <outlet property="postProfileImage" destination="Znb-TW-Ju6" id="SNy-fl-EKO"/>
                                     <outlet property="postUsername" destination="ZtK-oj-4cn" id="X6O-Jr-J3U"/>
+                                    <outlet property="timeStampLabel" destination="RNx-4U-y49" id="aAu-s9-GK1"/>
                                     <segue destination="9bS-It-voQ" kind="show" id="m3e-TJ-wex"/>
                                 </connections>
                             </tableViewCell>
@@ -212,11 +213,12 @@
                         <outlet property="detailsImageView" destination="FF3-RB-KcT" id="jMX-dp-sTZ"/>
                         <outlet property="detailsPostCaption" destination="qlY-m2-wRD" id="yf0-dJ-F0Q"/>
                         <outlet property="detailsPostUsername" destination="ubS-EN-0bK" id="yCe-zi-5D1"/>
+                        <outlet property="detailsTimeStamp" destination="Re1-O2-9Xg" id="VKj-mn-A9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1DD-4d-vgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="-313"/>
+            <point key="canvasLocation" x="2479" y="-313"/>
         </scene>
         <!--Instagram-->
         <scene sceneID="BQ0-OE-XlH">

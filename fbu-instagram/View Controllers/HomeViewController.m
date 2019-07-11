@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "DetailsViewController.h"
 #import <Parse/Parse.h>
+#import "NSDate+DateTools.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "PostCell.h"
@@ -62,6 +63,8 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     
+    [query includeKey:@"createdAt"];
+    
     
 //    [query whereKey:@"likesCount" greaterThan:@100];
     
@@ -113,17 +116,17 @@
     //Image is stored
     
     
-    //cell.post = post; Why?
-    
     cell.postCaption.text = post[@"caption"];
     cell.postImage.image = image;
     cell.postProfileImage.image = [UIImage imageNamed:@"pau_profile.png"];
     
     cell.postUsername.text = post.author.username;
-  //  cell.post.text = post.createdAt;
-
-    // [@"username"];
-
+    
+    //Relative date
+    NSDate *timeAgoDate = [NSDate dateWithTimeInterval:0 sinceDate:post.createdAt];
+    
+    //Displays relative date
+    cell.timeStampLabel.text =timeAgoDate.shortTimeAgoSinceNow;
 
     return cell;
 
