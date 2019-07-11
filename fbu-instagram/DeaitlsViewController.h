@@ -1,5 +1,5 @@
 //
-//  DetailsViewController.h
+//  DeaitlsViewController.h
 //  fbu-instagram
 //
 //  Created by panzaldo on 7/11/19.
@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailsViewController : UIViewController
-@property (nonatomic, strong) Post *post;
+@interface DeaitlsViewController : UIViewController
 
 @end
 

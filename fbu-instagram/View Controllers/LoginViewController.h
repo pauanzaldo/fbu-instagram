@@ -10,15 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol CanReceiveASpellDelegate<NSObject>
-
-- (void)receiveASpell:(NSString *) spell;
-
-@end
+//@protocol CanReceiveASpellDelegate<NSObject>
+//
+//- (void)receiveASpell:(NSString *) spell;
+//
+//@end
 
 @interface LoginViewController : UIViewController
 
-@property (nonatomic, weak)id <CanReceiveASpellDelegate> delegate;
+//@property (nonatomic, weak)id <CanReceiveASpellDelegate> delegate;
 
 @end
 
