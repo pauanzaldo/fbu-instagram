@@ -33,7 +33,7 @@
     
     
     //Temporary
-    self.tableView.rowHeight = 400;
+    self.tableView.rowHeight = 310;
     
     [self fetchPosts];
     
@@ -43,11 +43,16 @@
   //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instagram-logo.png"]];
     
     //Bind the action to the refresh control
-    [self.refreshControl addTarget:self action:@selector(fetchTimeline) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     
     //Insert the refresh control into the list
     [self.tableView addSubview:self.refreshControl];
 
+}
+//Automatically refreshes data
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self fetchPosts];
 }
 
 -(void)fetchPosts{
