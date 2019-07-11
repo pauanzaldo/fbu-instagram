@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loginIndicator;
-
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 
@@ -44,8 +42,7 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            
-            // display view controller that needs to shown after successful login
+            // display Home View Controller
         }
     }];
 }

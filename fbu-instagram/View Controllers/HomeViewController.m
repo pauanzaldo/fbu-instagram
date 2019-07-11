@@ -19,7 +19,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *postsArray;
 @property (weak, nonatomic) IBOutlet UIImageView *homePostImage;
-@property (weak, nonatomic) IBOutlet UITextView *homePostCaption;
+@property (weak, nonatomic) IBOutlet UILabel *homePostCaption;
+
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
@@ -30,10 +31,16 @@
 
     [super viewDidLoad];
     
+    [self.tableView reloadData];
+
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+    @{NSForegroundColorAttributeName:[UIColor blackColor],
+    NSFontAttributeName:[UIFont fontWithName:@"Billabong" size:21]}];
+
     //Temporary
     self.tableView.rowHeight = 310;
     
@@ -49,6 +56,9 @@
     
     //Insert the refresh control into the list
     [self.tableView addSubview:self.refreshControl];
+    
+    
+    
 
 }
 //Automatically refreshes data
@@ -64,9 +74,6 @@
     [query includeKey:@"author"];
     
     [query includeKey:@"createdAt"];
-    
-    
-//    [query whereKey:@"likesCount" greaterThan:@100];
     
     //View the last 20 posts submitted to "Instagram"
     query.limit = 20;
@@ -96,13 +103,16 @@
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        appDelegate.window.rootViewController = loginViewController;
     }];
     
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [PFUser logOut];
+
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    appDelegate.window.rootViewController = loginViewController;
     
 }
 
