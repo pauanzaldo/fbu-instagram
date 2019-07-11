@@ -10,6 +10,18 @@
 		09B2352116C56880E426407D /* Pods_fbu_instagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F7AE096AFA4D175F7284B /* Pods_fbu_instagramUITests.framework */; };
 		1179DCAF22D6A709004C277E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 1179DCAE22D6A709004C277E /* Post.m */; };
 		1179DCB322D6A80B004C277E /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1179DCB222D6A80B004C277E /* PostCell.m */; };
+		1179DCC122D7AB5F004C277E /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCB522D7AB5F004C277E /* FreigSanProMedIt.otf */; };
+		1179DCC222D7AB5F004C277E /* FreigSanProBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCB622D7AB5F004C277E /* FreigSanProBold.otf */; };
+		1179DCC322D7AB5F004C277E /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCB722D7AB5F004C277E /* FreigSanProSem.otf */; };
+		1179DCC422D7AB5F004C277E /* FreigSanProBlk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCB822D7AB5F004C277E /* FreigSanProBlk.otf */; };
+		1179DCC522D7AB5F004C277E /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCB922D7AB5F004C277E /* FreigSanProLigIt.otf */; };
+		1179DCC622D7AB5F004C277E /* FreigSanProSemIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBA22D7AB5F004C277E /* FreigSanProSemIt.otf */; };
+		1179DCC722D7AB5F004C277E /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBB22D7AB5F004C277E /* FreigSanProMed.otf */; };
+		1179DCC822D7AB5F004C277E /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBC22D7AB5F004C277E /* FreigSanProBook.otf */; };
+		1179DCC922D7AB5F004C277E /* FreigSanProBoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBD22D7AB5F004C277E /* FreigSanProBoldIt.otf */; };
+		1179DCCA22D7AB5F004C277E /* FreigSanProBookIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBE22D7AB5F004C277E /* FreigSanProBookIt.otf */; };
+		1179DCCB22D7AB5F004C277E /* FreigSanProBlkIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCBF22D7AB5F004C277E /* FreigSanProBlkIt.otf */; };
+		1179DCCC22D7AB5F004C277E /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1179DCC022D7AB5F004C277E /* FreigSanProLig.otf */; };
 		11F221AE22D3FB2E00F17E95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221AD22D3FB2E00F17E95 /* AppDelegate.m */; };
 		11F221B422D3FB2E00F17E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F221B222D3FB2E00F17E95 /* Main.storyboard */; };
 		11F221B622D3FB2F00F17E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F221B522D3FB2F00F17E95 /* Assets.xcassets */; };
@@ -47,6 +59,19 @@
 		1179DCAE22D6A709004C277E /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		1179DCB122D6A80B004C277E /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		1179DCB222D6A80B004C277E /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		1179DCB522D7AB5F004C277E /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProMedIt.otf; path = ../../../../../../Library/Fonts/FreigSanProMedIt.otf; sourceTree = "<group>"; };
+		1179DCB622D7AB5F004C277E /* FreigSanProBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBold.otf; path = ../../../../../../Library/Fonts/FreigSanProBold.otf; sourceTree = "<group>"; };
+		1179DCB722D7AB5F004C277E /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProSem.otf; path = ../../../../../../Library/Fonts/FreigSanProSem.otf; sourceTree = "<group>"; };
+		1179DCB822D7AB5F004C277E /* FreigSanProBlk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBlk.otf; path = ../../../../../../Library/Fonts/FreigSanProBlk.otf; sourceTree = "<group>"; };
+		1179DCB922D7AB5F004C277E /* FreigSanProLigIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProLigIt.otf; path = ../../../../../../Library/Fonts/FreigSanProLigIt.otf; sourceTree = "<group>"; };
+		1179DCBA22D7AB5F004C277E /* FreigSanProSemIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProSemIt.otf; path = ../../../../../../Library/Fonts/FreigSanProSemIt.otf; sourceTree = "<group>"; };
+		1179DCBB22D7AB5F004C277E /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProMed.otf; path = ../../../../../../Library/Fonts/FreigSanProMed.otf; sourceTree = "<group>"; };
+		1179DCBC22D7AB5F004C277E /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBook.otf; path = ../../../../../../Library/Fonts/FreigSanProBook.otf; sourceTree = "<group>"; };
+		1179DCBD22D7AB5F004C277E /* FreigSanProBoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBoldIt.otf; path = ../../../../../../Library/Fonts/FreigSanProBoldIt.otf; sourceTree = "<group>"; };
+		1179DCBE22D7AB5F004C277E /* FreigSanProBookIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBookIt.otf; path = ../../../../../../Library/Fonts/FreigSanProBookIt.otf; sourceTree = "<group>"; };
+		1179DCBF22D7AB5F004C277E /* FreigSanProBlkIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProBlkIt.otf; path = ../../../../../../Library/Fonts/FreigSanProBlkIt.otf; sourceTree = "<group>"; };
+		1179DCC022D7AB5F004C277E /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FreigSanProLig.otf; path = ../../../../../../Library/Fonts/FreigSanProLig.otf; sourceTree = "<group>"; };
+		1179DCCD22D7B057004C277E /* richardm.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = richardm.ttf; path = ../../../../Library/Fonts/richardm.ttf; sourceTree = "<group>"; };
 		11F221A922D3FB2E00F17E95 /* fbu-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fbu-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F221AC22D3FB2E00F17E95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F221AD22D3FB2E00F17E95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -119,6 +144,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1179DCB422D7AB39004C277E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				1179DCCD22D7B057004C277E /* richardm.ttf */,
+				1179DCB822D7AB5F004C277E /* FreigSanProBlk.otf */,
+				1179DCBF22D7AB5F004C277E /* FreigSanProBlkIt.otf */,
+				1179DCB622D7AB5F004C277E /* FreigSanProBold.otf */,
+				1179DCBD22D7AB5F004C277E /* FreigSanProBoldIt.otf */,
+				1179DCBC22D7AB5F004C277E /* FreigSanProBook.otf */,
+				1179DCBE22D7AB5F004C277E /* FreigSanProBookIt.otf */,
+				1179DCC022D7AB5F004C277E /* FreigSanProLig.otf */,
+				1179DCB922D7AB5F004C277E /* FreigSanProLigIt.otf */,
+				1179DCBB22D7AB5F004C277E /* FreigSanProMed.otf */,
+				1179DCB522D7AB5F004C277E /* FreigSanProMedIt.otf */,
+				1179DCB722D7AB5F004C277E /* FreigSanProSem.otf */,
+				1179DCBA22D7AB5F004C277E /* FreigSanProSemIt.otf */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		11F221A022D3FB2E00F17E95 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +189,7 @@
 		11F221AB22D3FB2E00F17E95 /* fbu-instagram */ = {
 			isa = PBXGroup;
 			children = (
+				1179DCB422D7AB39004C277E /* New Group */,
 				1179DCB022D6A7E2004C277E /* Models */,
 				11F221E222D40E3100F17E95 /* View Controllers */,
 				11F221AC22D3FB2E00F17E95 /* AppDelegate.h */,
@@ -321,8 +367,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F221B922D3FB2F00F17E95 /* LaunchScreen.storyboard in Resources */,
+				1179DCC422D7AB5F004C277E /* FreigSanProBlk.otf in Resources */,
+				1179DCC922D7AB5F004C277E /* FreigSanProBoldIt.otf in Resources */,
+				1179DCCC22D7AB5F004C277E /* FreigSanProLig.otf in Resources */,
+				1179DCCA22D7AB5F004C277E /* FreigSanProBookIt.otf in Resources */,
 				11F221B622D3FB2F00F17E95 /* Assets.xcassets in Resources */,
+				1179DCC822D7AB5F004C277E /* FreigSanProBook.otf in Resources */,
+				1179DCC722D7AB5F004C277E /* FreigSanProMed.otf in Resources */,
+				1179DCC322D7AB5F004C277E /* FreigSanProSem.otf in Resources */,
+				1179DCC522D7AB5F004C277E /* FreigSanProLigIt.otf in Resources */,
+				1179DCC622D7AB5F004C277E /* FreigSanProSemIt.otf in Resources */,
+				1179DCC222D7AB5F004C277E /* FreigSanProBold.otf in Resources */,
+				1179DCC122D7AB5F004C277E /* FreigSanProMedIt.otf in Resources */,
 				11F221B422D3FB2E00F17E95 /* Main.storyboard in Resources */,
+				1179DCCB22D7AB5F004C277E /* FreigSanProBlkIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

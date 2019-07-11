@@ -25,10 +25,12 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
     
     //Temporary
     self.tableView.rowHeight = 400;
@@ -51,8 +53,10 @@
 -(void)fetchPosts{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
- //   [query orderByDescending:@"createdAt"];
-   // [query includeKey:@"author"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    
+    
 //    [query whereKey:@"likesCount" greaterThan:@100];
     
     //View the last 20 posts submitted to "Instagram"
@@ -107,7 +111,13 @@
     
     cell.postCaption.text = post[@"caption"];
     cell.postImage.image = image;
+    cell.postProfileImage.image = [UIImage imageNamed:@"pau_profile.png"];
     
+    cell.postUsername.text = post.author.username;
+  //  cell.post.text = post.createdAt;
+
+    // [@"username"];
+
 
     return cell;
 

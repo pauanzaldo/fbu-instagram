@@ -15,6 +15,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.postProfileImage.layer.cornerRadius = 20;
+    self.postProfileImage.clipsToBounds = YES;
+    
     // Initialization code
 }
 
