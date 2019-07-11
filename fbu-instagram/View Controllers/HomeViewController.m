@@ -10,8 +10,13 @@
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "PostCell.h"
+#import "Post.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *postsArray;
+
 
 @end
 
@@ -19,8 +24,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self fetchPosts];
+    
+    
   //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instagram-logo.png"]];
 
+}
+
+-(void)fetchPosts{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+ //   [query orderByDescending:@"createdAt"];
+   // [query includeKey:@"author"];
+//    [query whereKey:@"likesCount" greaterThan:@100];
+    query.limit = 20;
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.postsArray = [NSMutableArray arrayWithArray: posts];
+
+           // self.postss = posts;
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 
@@ -42,6 +75,28 @@
     appDelegate.window.rootViewController = loginViewController;
     
 }
+
+// Returns an instance of the custom cell with that reuse identifier with its elements populated with data at the index asked for
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    
+  //  Post *post = self.posts[indexPath.row];
+    
+  //  cell.post = post;
+
+
+  //  cell.delegate = self;
+    return cell;
+
+    
+}
+
+// Returns the number of items returned from the API
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.postsArray.count;
+}
+
 
 /*
 #pragma mark - Navigation
