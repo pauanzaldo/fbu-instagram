@@ -6,9 +6,12 @@
 //  Copyright © 2019 panzaldo. All rights reserved.
 //
 
+#import "Post.h"
 #import "PostCell.h"
 
+
 @implementation PostCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -18,7 +21,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

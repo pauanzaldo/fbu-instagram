@@ -16,7 +16,9 @@
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *postsArray;
-
+@property (weak, nonatomic) IBOutlet UIImageView *homePostImage;
+@property (weak, nonatomic) IBOutlet UITextView *homePostCaption;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -28,10 +30,21 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    //Temporary
+    self.tableView.rowHeight = 400;
+    
     [self fetchPosts];
     
+    //Allocate the UIRefreshControl
+    self.refreshControl = [[UIRefreshControl alloc] init];
     
   //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instagram-logo.png"]];
+    
+    //Bind the action to the refresh control
+    [self.refreshControl addTarget:self action:@selector(fetchTimeline) forControlEvents:UIControlEventValueChanged];
+    
+    //Insert the refresh control into the list
+    [self.tableView addSubview:self.refreshControl];
 
 }
 
@@ -41,18 +54,22 @@
  //   [query orderByDescending:@"createdAt"];
    // [query includeKey:@"author"];
 //    [query whereKey:@"likesCount" greaterThan:@100];
+    
+    //View the last 20 posts submitted to "Instagram"
     query.limit = 20;
     
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.postsArray = [NSMutableArray arrayWithArray: posts];
+            [self.tableView reloadData];
 
            // self.postss = posts;
             // do something with the array of object returned by the call
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 
@@ -80,13 +97,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Post *post = self.postsArray[indexPath.row];
     
-  //  Post *post = self.posts[indexPath.row];
+    UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
+    //Image is stored
     
-  //  cell.post = post;
+    
+    //cell.post = post; Why?
+    
+    cell.postCaption.text = post[@"caption"];
+    cell.postImage.image = image;
+    
 
-
-  //  cell.delegate = self;
     return cell;
 
     
