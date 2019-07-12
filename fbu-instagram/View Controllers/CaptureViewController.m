@@ -124,23 +124,4 @@
 
 
 
-
-// #pragma mark - Navigation
-//
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     if([segue.identifier isEqualToString:@"CaptionSegue"]){
-//         CaptionViewController *captionViewController = [segue destinationViewController];
-//         captionViewController.image = self.chosenImage;
-//
-//
-//       //  profileController.user = sender;
-//
-//         //send chosen image to Capture View Controller
-//     }
-// }
-
-
-
-
-
 @end

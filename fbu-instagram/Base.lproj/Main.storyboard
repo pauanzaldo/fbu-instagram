@@ -337,16 +337,17 @@
                         <outlet property="collectionView" destination="yCf-wt-rTz" id="Lwf-Nv-vtp"/>
                         <outlet property="profileButton" destination="qWX-YH-4pE" id="DXl-PC-Qes"/>
                         <outlet property="userProfileImage" destination="q95-Za-N1k" id="ZpC-Ek-0Sr"/>
+                        <outlet property="userProfileLabel" destination="iJa-lx-kpc" id="iqH-dM-nuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FB6-wT-hc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="1411.8440779610196"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Profile Pic View Controller-->
         <scene sceneID="xuR-vc-RJD">
             <objects>
-                <viewController id="baN-SO-pVE" sceneMemberID="viewController">
+                <viewController id="baN-SO-pVE" customClass="ChangeProfilePicViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MQ0-IF-78p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,6 +360,9 @@
                                 <rect key="frame" x="109" y="214" width="157" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change Profile Photo"/>
+                                <connections>
+                                    <action selector="didTapChange:" destination="baN-SO-pVE" eventType="touchUpInside" id="Vky-dl-Xsa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -366,8 +370,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="UBl-am-eR4">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="yde-R2-hch"/>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="rMT-bh-nLs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="rMT-bh-nLs">
+                            <connections>
+                                <action selector="didSave:" destination="baN-SO-pVE" id="mKM-9d-5r0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="chosenProfilePic" destination="nmQ-68-SAh" id="njF-tP-fJ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pA-i8-GfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJR-r5-iji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3262" y="1397"/>
+            <point key="canvasLocation" x="3185" y="1412"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Bcd-DG-asD">

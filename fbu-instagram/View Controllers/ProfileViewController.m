@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *postsArray;
+@property (weak, nonatomic) IBOutlet UILabel *userProfileLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
@@ -54,6 +55,11 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
 
+    //Set profile image
+    PFFileObject *imageFile = PFUser.currentUser[@"profilePic"];
+    UIImage *image = [[UIImage alloc] initWithData:imageFile.getData];
+    self.userProfileImage.image = image;
+    
     self.userProfileImage.layer.cornerRadius = 40;
     self.userProfileImage.clipsToBounds = YES;
     
@@ -61,6 +67,7 @@
     self.profileButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
      self.profileButton.layer.cornerRadius = 5;
     
+    self.userProfileLabel.text = PFUser.currentUser[@"username"];
     [self fetchImages];
     
 }
@@ -77,13 +84,23 @@
     
     collectionCell.postCellImage.image = image;
     
+    
+    
     return collectionCell;
     
 }
 
 
-//if imageData (
-   //           load ){}
+-(void)fetchProfilePicture{
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query includeKey:@"profilePic"];
+    
+    [query whereKey:@"profilePic" equalTo:PFUser.currentUser];
+
+ //  NSData *data = PFUser.currentUser.profilePic.getData;
+    //UIImage *image = [[UIImage alloc] initWithData:data];
+
+}
 
 -(void)fetchImages{
     // construct query
@@ -98,6 +115,7 @@
     
     //View the last 20 posts submitted to "Instagram"
     query.limit = 20;
+    
     
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {

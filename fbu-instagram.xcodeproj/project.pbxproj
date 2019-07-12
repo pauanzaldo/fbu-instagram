@@ -26,6 +26,7 @@
 		11B7990F22D7DF07000B5E57 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1129065F22D7B35200C77418 /* Billabong.ttf */; };
 		11B7991222D7E5C6000B5E57 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7991122D7E5C6000B5E57 /* ProfileViewController.m */; };
 		11B7991522D7E7C0000B5E57 /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7991422D7E7C0000B5E57 /* PostCollectionCell.m */; };
+		11B7991822D80F71000B5E57 /* ChangeProfilePicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B7991722D80F71000B5E57 /* ChangeProfilePicViewController.m */; };
 		11F221AE22D3FB2E00F17E95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F221AD22D3FB2E00F17E95 /* AppDelegate.m */; };
 		11F221B422D3FB2E00F17E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F221B222D3FB2E00F17E95 /* Main.storyboard */; };
 		11F221B622D3FB2F00F17E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F221B522D3FB2F00F17E95 /* Assets.xcassets */; };
@@ -82,6 +83,8 @@
 		11B7991122D7E5C6000B5E57 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		11B7991322D7E7C0000B5E57 /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
 		11B7991422D7E7C0000B5E57 /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
+		11B7991622D80F71000B5E57 /* ChangeProfilePicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeProfilePicViewController.h; sourceTree = "<group>"; };
+		11B7991722D80F71000B5E57 /* ChangeProfilePicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeProfilePicViewController.m; sourceTree = "<group>"; };
 		11F221A922D3FB2E00F17E95 /* fbu-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fbu-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F221AC22D3FB2E00F17E95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11F221AD22D3FB2E00F17E95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				11B7990D22D7BBF7000B5E57 /* DetailsViewController.m */,
 				11B7991022D7E5C6000B5E57 /* ProfileViewController.h */,
 				11B7991122D7E5C6000B5E57 /* ProfileViewController.m */,
+				11B7991622D80F71000B5E57 /* ChangeProfilePicViewController.h */,
+				11B7991722D80F71000B5E57 /* ChangeProfilePicViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 			files = (
 				11F221E822D4187300F17E95 /* RegisterViewController.m in Sources */,
 				11F221E022D40DFF00F17E95 /* LoginViewController.m in Sources */,
+				11B7991822D80F71000B5E57 /* ChangeProfilePicViewController.m in Sources */,
 				11B7991522D7E7C0000B5E57 /* PostCollectionCell.m in Sources */,
 				11F221BC22D3FB2F00F17E95 /* main.m in Sources */,
 				1179DCB322D6A80B004C277E /* PostCell.m in Sources */,
