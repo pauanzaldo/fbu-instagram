@@ -33,8 +33,13 @@
     NSData *data = self.post.image.getData;
     UIImage *image = [[UIImage alloc] initWithData:data];
     
+    PFFileObject *imageFile = PFUser.currentUser[@"profilePic"];
     
-    self.detailsImageProfile.image = [UIImage imageNamed:@"pau_profile.png"];
+    //Synchronously gets the data from cache if available or fetches its contents from the network.
+    UIImage *userImage = [[UIImage alloc] initWithData:imageFile.getData];
+    
+    self.detailsImageProfile.image = userImage;
+    
     self.detailsImageProfile.layer.cornerRadius = 20;
     self.detailsImageProfile.clipsToBounds = YES;
     

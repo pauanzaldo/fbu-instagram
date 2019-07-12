@@ -24,6 +24,7 @@
     return @"Post";
 }
 
+//To upload the user image to Parse, get user input from CaptureViewController. Then, call postUserImage from Capture View Controller by passing all the required arguments into it
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -37,6 +38,8 @@
     [newPost saveInBackgroundWithBlock: completion];
 }
 
+
+//
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
     
     // check if image is not nil

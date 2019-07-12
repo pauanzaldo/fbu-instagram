@@ -22,12 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)didTapChange:(id)sender {
-    
-    
     // Instantiate a UIImagePickerController
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -55,16 +52,13 @@
     //  UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    // Do something with the image
+    // Do resize the image
     
     self.chosenProfilePic.image = editedImage;
     self.chosenPic = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
-    // manually segue to Caption Controller Controller
-    
-    //tlcfihhlufrfdjdcbhhkbvbnejjvghkn  [self performSegueWithIdentifier:@"CaptionSegue" sender:nil];
     
 }
 
@@ -98,17 +92,5 @@
     
 }
 
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

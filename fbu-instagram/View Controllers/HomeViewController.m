@@ -33,7 +33,6 @@
     
     [self.tableView reloadData];
 
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -41,31 +40,29 @@
     @{NSForegroundColorAttributeName:[UIColor blackColor],
     NSFontAttributeName:[UIFont fontWithName:@"Billabong" size:21]}];
 
-    //Temporary
+    //Temporary rowHeight
     self.tableView.rowHeight = 310;
+    
     
     [self fetchPosts];
     
     //Allocate the UIRefreshControl
     self.refreshControl = [[UIRefreshControl alloc] init];
     
-  //  self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"instagram-logo.png"]];
-    
     //Bind the action to the refresh control
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     
     //Insert the refresh control into the list
     [self.tableView addSubview:self.refreshControl];
-    
-    
-    
-
 }
+
+
 //Automatically refreshes data
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self fetchPosts];
 }
+
 
 -(void)fetchPosts{
     // construct query
@@ -94,6 +91,7 @@
 }
 
 
+
 /*
  Action: didTapLogout
  Goal: User logs out of the app. After logout,
@@ -110,23 +108,26 @@
         appDelegate.window.rootViewController = loginViewController;
     }];
     
-    
-    
 }
 
-// Returns an instance of the custom cell with that reuse identifier with its elements populated with data at the index asked for
+// Returns an instance of the custom cell with that reuse identifier with its elements populated with data at
+//the index asked for
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postsArray[indexPath.row];
     
     UIImage *image = [[UIImage alloc] initWithData:post.image.getData];
-    //Image is stored
-    
     
     cell.postCaption.text = post[@"caption"];
     cell.postImage.image = image;
-    cell.postProfileImage.image = [UIImage imageNamed:@"pau_profile.png"];
+    
+   
+    
+    PFFileObject *imageFile = PFUser.currentUser[@"profilePic"];
+    //Synchronously gets the data from cache if available or fetches its contents from the network.
+    UIImage *userImage = [[UIImage alloc] initWithData:imageFile.getData];
+    cell.postProfileImage.image = userImage;
     
     cell.postUsername.text = post.author.username;
     
@@ -137,8 +138,6 @@
     cell.timeStampLabel.text =timeAgoDate.shortTimeAgoSinceNow;
 
     return cell;
-
-    
 }
 
 // Returns the number of items returned from the API
@@ -147,15 +146,11 @@
 }
 
 
-
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    // Get the new view controller using [segue destinationViewController].
+
+    // Get the DetailsViewController using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];

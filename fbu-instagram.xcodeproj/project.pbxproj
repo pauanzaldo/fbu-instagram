@@ -159,7 +159,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1179DCB422D7AB39004C277E /* New Group */ = {
+		1179DCB422D7AB39004C277E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				1129065F22D7B35200C77418 /* Billabong.ttf */,
@@ -176,7 +176,7 @@
 				1179DCB722D7AB5F004C277E /* FreigSanProSem.otf */,
 				1179DCBA22D7AB5F004C277E /* FreigSanProSemIt.otf */,
 			);
-			path = "New Group";
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		11F221A022D3FB2E00F17E95 = {
@@ -204,7 +204,7 @@
 		11F221AB22D3FB2E00F17E95 /* fbu-instagram */ = {
 			isa = PBXGroup;
 			children = (
-				1179DCB422D7AB39004C277E /* New Group */,
+				1179DCB422D7AB39004C277E /* Fonts */,
 				1179DCB022D6A7E2004C277E /* Models */,
 				11F221E222D40E3100F17E95 /* View Controllers */,
 				11F221AC22D3FB2E00F17E95 /* AppDelegate.h */,

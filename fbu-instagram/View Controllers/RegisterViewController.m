@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)didTapNext:(UIButton *)sender {
@@ -41,6 +40,7 @@
     newUser.password = self.passwordField.text;
     newUser.email = self.nameField.text;
 
+    //signUpInBackgroundWithBlock signs up the user asynchronously. This also enforces that the username isn't already taken
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);

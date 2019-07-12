@@ -28,12 +28,11 @@
     
     self.captionTextView.delegate = self;
     
-    
     // Instantiate a UIImagePickerController
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    // imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     // If camera is available, choose camera. Else, choose camera roll
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -55,18 +54,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
 
     // Get the image captured by the UIImagePickerController
-  //  UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    // Do something with the image
+    // Resize the image
     self.chosenImageView.image = editedImage;
     self.chosenImage = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     
-    // Dismiss UIImagePickerController to go back to your original view controller
+    // Dismiss UIImagePickerController to go back to Home View controller
     [self dismissViewControllerAnimated:YES completion:nil];
-    // manually segue to Caption Controller Controller
-    
-  //tlcfihhlufrfdjdcbhhkbvbnejjvghkn  [self performSegueWithIdentifier:@"CaptionSegue" sender:nil];
 
 }
 
@@ -106,6 +101,7 @@
     }
     [self.captionTextView resignFirstResponder];
 }
+
 
 - (IBAction)didShare:(UIBarButtonItem *)sender {
     [Post postUserImage:self.chosenImageView.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {

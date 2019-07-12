@@ -33,7 +33,14 @@
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+ 
+    //Sets Custom Font to Instagram Font
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor blackColor],
+       NSFontAttributeName:[UIFont fontWithName:@"Billabong" size:21]}];
     
+    //Setup for Collection Layour
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
     
     //fixed number of cells per line
@@ -42,21 +49,33 @@
     
     CGFloat postersPerLine = 3;
     CGFloat itemWidth = (self.collectionView.frame.size.width -  layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
-    
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[UIColor blackColor],
-       NSFontAttributeName:[UIFont fontWithName:@"Billabong" size:21]}];
-    
 
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self fetchProfileImage];
+    [self fetchImages];
     
+}
 
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    PostCollectionCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
+    Post *post = self.postsArray[indexPath.item];
+    NSData *data = post.image.getData;
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    collectionCell.postCellImage.image = image;
+    
+    return collectionCell;
+    
+}
+
+
+-(void)fetchProfileImage{
     //Set profile image
     PFFileObject *imageFile = PFUser.currentUser[@"profilePic"];
+    
+    //Synchronously gets the data from cache if available or fetches its contents from the network.
     UIImage *image = [[UIImage alloc] initWithData:imageFile.getData];
     self.userProfileImage.image = image;
     
@@ -65,49 +84,22 @@
     
     self.profileButton.layer.borderWidth = 1.0f;
     self.profileButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-     self.profileButton.layer.cornerRadius = 5;
+    self.profileButton.layer.cornerRadius = 5;
     
     self.userProfileLabel.text = PFUser.currentUser[@"username"];
-    [self fetchImages];
-    
 }
 
-
-- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
-    PostCollectionCell *collectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    
-    Post *post = self.postsArray[indexPath.item];
-    
-    NSData *data = post.image.getData;
-    UIImage *image = [[UIImage alloc] initWithData:data];
-    
-    collectionCell.postCellImage.image = image;
-    
-    
-    
-    return collectionCell;
-    
-}
-
-
--(void)fetchProfilePicture{
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query includeKey:@"profilePic"];
-    
-    [query whereKey:@"profilePic" equalTo:PFUser.currentUser];
-
- //  NSData *data = PFUser.currentUser.profilePic.getData;
-    //UIImage *image = [[UIImage alloc] initWithData:data];
-
-}
+/*
+ Method: fetchImages
+ Purpose: Construct query to retrieve Post data stored in Parse.
+ */
 
 -(void)fetchImages{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
+    
     [query includeKey:@"author"];
-    [query includeKey:@"profilePic"];
 
     [query whereKey:@"author" equalTo:PFUser.currentUser];
 
@@ -116,20 +108,15 @@
     //View the last 20 posts submitted to "Instagram"
     query.limit = 20;
     
-    
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.postsArray = [NSMutableArray arrayWithArray: posts];
             [self.collectionView reloadData];
-            
-            // self.postss = posts;
-            // do something with the array of object returned by the call
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

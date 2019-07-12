@@ -18,8 +18,6 @@
     
     self.postProfileImage.layer.cornerRadius = 20;
     self.postProfileImage.clipsToBounds = YES;
-    
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

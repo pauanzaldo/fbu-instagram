@@ -21,7 +21,8 @@
  Method: didFinishLaunghingWithOptions
  Goals:
  1. Initialize parse in AppDelegate to point to my own server
- 2. Check if there is a current user in Parse cache or not. If there is a cached user already present, directly load the Home view Controller (without asking the user to login again).
+ 2. Check if there is a current user in Parse cache or not. If there is a cached user already present,
+    directly load the Home view Controller (without asking the user to login again).
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
     
