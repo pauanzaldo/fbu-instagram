@@ -9,6 +9,8 @@
 #import "ProfileViewController.h"
 #import "PostCell.h"
 #import "PostCollectionCell.h"
+#import <QuartzCore/QuartzCore.h>
+
 #import "UIImageView+AFNetworking.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -19,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
+@property (weak, nonatomic) IBOutlet UIButton *profileButton;
 
 @end
 
@@ -54,6 +57,9 @@
     self.userProfileImage.layer.cornerRadius = 40;
     self.userProfileImage.clipsToBounds = YES;
     
+    self.profileButton.layer.borderWidth = 1.0f;
+    self.profileButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+     self.profileButton.layer.cornerRadius = 5;
     
     [self fetchImages];
     
@@ -76,11 +82,16 @@
 }
 
 
+//if imageData (
+   //           load ){}
+
 -(void)fetchImages{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
+    [query includeKey:@"profilePic"];
+
     [query whereKey:@"author" equalTo:PFUser.currentUser];
 
     [query includeKey:@"createdAt"];
@@ -103,15 +114,9 @@
 
 }
 
-
-
-
-
-
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.postsArray.count;
 }
-
 
 
 @end

@@ -110,8 +110,6 @@
         appDelegate.window.rootViewController = loginViewController;
     }];
     
-//    [PFUser logOut];
-
     
     
 }
